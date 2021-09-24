@@ -5,8 +5,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:production": "ng build --prod",
+    "heroku-postbuild": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "ng e2e",
+    "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
+    "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,html,scss}\"",
+    "prettier:check": "prettier --list-different \"./{src,e2e}/**/*.{ts,js,html,scss}\"",
+    "generate": "ng generate"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "express": "^4.17.1",
+    "prettier": "^2.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "tslint": "^6.1.3",
