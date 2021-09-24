@@ -98,9 +98,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "boilerplate-angular-init-project"
+  "defaultProject": "boilerplate-angular-init-project",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
