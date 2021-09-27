@@ -12,7 +12,6 @@ import { environment } from '@env/environment';
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
     constructor() {}
-
     intercept(
         request: HttpRequest<any>,
         next: HttpHandler
