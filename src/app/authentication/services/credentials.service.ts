@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { ICredentials } from '@app/@modules/authentication/interfaces/credentials-interface';
-import { IToken } from '@app/@modules/authentication/interfaces/token-interface';
+import { ICredentials } from '@app/authentication/interfaces/credentials-interface';
+import { IToken } from '@app/authentication/interfaces/token-interface';
 
 const credentialsKey = 'credentials';
 

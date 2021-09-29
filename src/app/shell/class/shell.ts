@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
 import { Route, Routes } from '@angular/router';
 import { ShellComponent } from '@app/shell/shell.component';
-import { AuthenticationGuard } from '@app/@modules/authentication/guards/authentication.guard';
+import { AuthenticationGuard } from '@app/authentication/guards/authentication.guard';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ShellService {
+
+/**
+ * Provides helper methods to create routes.
+ */
+export class Shell {
     /**
      * Creates routes using the shell component and authentication.
      * @param routes The routes to add.
@@ -17,7 +17,7 @@ export class ShellService {
             path: '',
             component: ShellComponent,
             children: routes,
-            canActivate: [AuthenticationGuard],
+            // canActivate: [AuthenticationGuard], // TEMPORARY COMMENT
             // Reuse ShellComponent instance when navigating between child views
             data: { reuse: true },
         };

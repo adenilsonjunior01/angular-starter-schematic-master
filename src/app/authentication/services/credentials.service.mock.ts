@@ -1,4 +1,4 @@
-import { ICredentials } from '@app/@modules/authentication/interfaces/credentials-interface';
+import { ICredentials } from '@app/authentication/interfaces/credentials-interface';
 
 export class MockCredentialsService {
     credentials: ICredentials | null = {

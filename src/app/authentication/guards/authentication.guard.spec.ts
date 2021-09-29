@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AuthenticationGuard } from './authentication.guard';
-import { MockCredentialsService } from '@app/@modules/authentication/services/credentials.service.mock';
+import { MockCredentialsService } from '@app/authentication/services/credentials.service.mock';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
-import { CredentialsService } from '@app/@modules/authentication/services/credentials.service';
+import { CredentialsService } from '@app/authentication/services/credentials.service';
 
 describe(AuthenticationGuard.name, () => {
     let authenticationGuard: AuthenticationGuard;

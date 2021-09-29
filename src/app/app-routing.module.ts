@@ -1,16 +1,14 @@
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ShellService } from '@app/shell/services/shell.service';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { Shell } from '@app/shell/class/shell';
 
 const routes: Routes = [
-    ShellService.childRoutes([
-        // example
-        // {
-        //     path: 'about',
-        //     loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
-        // },
+    Shell.childRoutes([
+        {
+            path: '',
+            loadChildren: () => import('./@modules/home/home.module').then((m) => m.HomeModule),
+        }
     ]),
-    { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

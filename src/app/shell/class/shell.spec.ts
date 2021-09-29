@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { Shell } from '@app/shell/class/shell';
 
-import { ShellService } from './shell.service';
 
-describe('ShellService', () => {
-  let service: ShellService;
+describe('Shell', () => {
+  let service: Shell;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ShellService);
+    service = TestBed.inject(Shell);
   });
 
   it('should be created', () => {

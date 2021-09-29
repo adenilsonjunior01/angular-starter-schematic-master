@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { CredentialsService } from './credentials.service';
-import { ICredentials } from '@app/@modules/authentication/interfaces/credentials-interface';
+import { ICredentials } from '@app/authentication/interfaces/credentials-interface';
 
 const credentialsKey = 'credentials';
 
