@@ -13,6 +13,7 @@ import { AppRoutingModule } from '@app/app-routing.module';
 import { ShellModule } from '@app/shell/shell.module';
 import { AuthenticationModule } from '@app/authentication/authentication.module';
 import { HomeModule } from '@app/@modules/home/home.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt);
 
@@ -29,7 +30,8 @@ registerLocaleData(localePt);
         AppRoutingModule,
         AuthenticationModule,
         ShellModule,
-        HomeModule
+        HomeModule,
+        NgbModule
     ],
     providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
     bootstrap: [AppComponent],

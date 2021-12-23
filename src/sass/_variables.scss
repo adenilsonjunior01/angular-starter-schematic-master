@@ -1,12 +1,9 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-    :root {
-        scroll-behavior: smooth;
-    }
+:root {
+    --font-family-roboto: 'Roboto', sans-serif;
+    --font-family-lato: "Lato", sans-serif;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
 }

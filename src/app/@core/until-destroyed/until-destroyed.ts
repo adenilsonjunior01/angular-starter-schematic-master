@@ -35,11 +35,10 @@ const untilDestroyedSymbol = Symbol('untilDestroyed');
  * ```
  */
 export function untilDestroyed(
-    instance: object,
-    destroyMethodName: string = 'ngOnDestroy'
+    instance: any,
+    destroyMethodName = 'ngOnDestroy'
 ) {
     return <T>(source: Observable<T>) => {
-        // @ts-ignore
         const originalDestroy = instance[destroyMethodName];
         const hasDestroyFunction = typeof originalDestroy === 'function';
 
@@ -48,23 +47,17 @@ export function untilDestroyed(
                 `${instance.constructor.name} is using untilDestroyed but doesn't implement ${destroyMethodName}`
             );
         }
-        // @ts-ignore
         if (!instance[untilDestroyedSymbol]) {
-            // @ts-ignore
             instance[untilDestroyedSymbol] = new Subject();
 
-            // @ts-ignore
             instance[destroyMethodName] = function () {
                 if (hasDestroyFunction) {
                     originalDestroy.apply(this, arguments);
                 }
-                // @ts-ignore
                 instance[untilDestroyedSymbol].next();
-                // @ts-ignore
                 instance[untilDestroyedSymbol].complete();
             };
         }
-        // @ts-ignore
         return source.pipe(takeUntil<T>(instance[untilDestroyedSymbol]));
     };
 }
