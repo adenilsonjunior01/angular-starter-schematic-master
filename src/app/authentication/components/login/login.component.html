@@ -1,38 +1,69 @@
-<div class='container'>
-    <div class='row'>
-        <div class='col-12 d-flex vh-100 mw-100 justify-content-center align-items-center'>
-            <div class='login__content shadow w-50'>
-                <div class='card p-4'>
-                    <form class='row' [formGroup]='form'>
-                        <div class='col-12'>
-                            <h2 class='text-center'>Login</h2>
+<div class="container">
+    <div class="row">
+        <div
+            class="
+                col-12
+                d-flex
+                vh-100
+                mw-100
+                justify-content-center
+                align-items-center
+            "
+        >
+            <div class="login__content shadow">
+                <div class="card p-4">
+                    <form class="row" [formGroup]="form" (submit)="login()">
+                        <div class="col-12">
+                            <h2 class="text-center">Login</h2>
                         </div>
-                        <div class='col-12 form-group'>
-                            <label for='email_label'>E-mail</label>
-                            <input type='text' class='form-control' id='email_label' formControlName='email'>
+                        <div class="col-12 form-group">
+                            <label for="email_label">E-mail</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="email_label"
+                                formControlName="email"
+                            />
                         </div>
-                        <div class='col-12 form-group'>
-                            <label for='senha_label'>Senha</label>
-                            <input type='password' class='form-control' id='senha_label' formControlName='password'>
+                        <div class="col-12 form-group">
+                            <label for="senha_label">Senha</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="senha_label"
+                                formControlName="password"
+                            />
                         </div>
-                        <div class='col-12 form-group'>
+                        <div class="col-12 form-group">
                             <div class="form-check">
-                                <input class="form-check-input position-static" type="checkbox" id="remember_label"
-                                       formControlName='remember'>
-                                <label class="form-check-label pl-2" for="remember_label">
+                                <input
+                                    class="form-check-input position-static"
+                                    type="checkbox"
+                                    id="remember_label"
+                                    formControlName="remember"
+                                />
+                                <label
+                                    class="form-check-label pl-2"
+                                    for="remember_label"
+                                >
                                     Lembrar usuário
                                 </label>
                             </div>
                         </div>
-                        <div class='col-12'>
-                            <button class='btn btn-primary'>Entrar</button>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">
+                                Entrar
+                            </button>
+                        </div>
+                        <div class="col-12">
+                            {{ valueDecript }}
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class='col-12'>
-            <app-form-debug [form]='form'></app-form-debug>
+        <div class="col-12">
+            <app-form-debug [form]="form"></app-form-debug>
         </div>
     </div>
 </div>
