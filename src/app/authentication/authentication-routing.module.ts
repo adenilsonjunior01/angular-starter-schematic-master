@@ -5,7 +5,10 @@ import { LoginComponent } from '@app/authentication/components/login/login.compo
 const routes: Routes = [
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        data: {
+            title: 'Autenticacão'
+        }
     }
 ];
 
