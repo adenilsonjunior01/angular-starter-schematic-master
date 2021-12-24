@@ -1,8 +1,24 @@
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { Shell } from '@app/shell/class/shell';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
+    {
+        path: '',
+        redirectTo: '/login',
+        pathMatch: 'full',
+    },
+    {
+        path: '',
+        component: AuthenticationComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
+            }
+        ]
+    },
     Shell.childRoutes([
         {
             path: '',
